@@ -1,0 +1,75 @@
+1. SELECT COUNT (CountryCode) FROM city WHERE CountryCode="USA"; ans=274
+2.SELECT Population, LifeExpectancy FROM country WHERE Name="Argentina"; ans=37032000,75.1
+3.SELECT Name,LifeExpectancy FROM country WHERE LifeExpectancy IS NOT NULL ORDER BY LifeExpectancy DESC LIMIT 1; ans= Andorra 83.5
+4.SELECT city.name, city.countrycode, country.code FROM city JOIN country ON city.countrycode=country.code WHERE city.name="Madrid"
+5.SELECT countrylanguage.language, countrylanguage.countrycode, country.region, country.code FROM countrylanguage JOIN country ON countrylanguage.countrycode
+=country.code WHERE country.region="southeast asia" ; ans=65
+6.SELECT name FROM city WHERE name LIKE "f%" LIMIT 25;
+7.SELECT COUNT(city.name), city.countrycode, country.code, country.name FROM city JOIN country ON city.countrycode=country.code WHERE country.code="CHN";
+8.SELECT name,population FROM country WHERE population IS NOT NULL AND population>0 ORDER BY population ASC LIMIT 1;
+9.SELECT COUNT(country.name) FROM country; ans=239
+10.SELECT name,surfacearea FROM country WHERE surfacearea >0 AND surfacearea IS NOT NULL ORDER BY surfacearea DESC LIMIT 10;ans=name               | surfacearea |
++--------------------+-------------+
+| Russian Federation | 17075400.00 |
+| Antarctica         | 13120000.00 |
+| Canada             |  9970610.00 |
+| China              |  9572900.00 |
+| United States      |  9363520.00 |
+| Brazil             |  8547403.00 |
+| Australia          |  7741220.00 |
+| India              |  3287263.00 |
+| Argentina          |  2780400.00 |
+| Kazakstan          |  2724900.00
+
+11.SELECT city.name, city.countrycode, country.code, country.name, country.population FROM city JOIN country ON city.countrycode=country.code WHERE country.co
+de="JPN" AND country.population > 0 AND country.population IS NOT NULL ORDER BY country.population DESC LIMIT 5 ; ans=
+name                | countrycode | code | name  | population |
++---------------------+-------------+------+-------+------------+
+| Tokyo               | JPN         | JPN  | Japan |  126714000 |
+| Jokohama [Yokohama] | JPN         | JPN  | Japan |  126714000 |
+| Osaka               | JPN         | JPN  | Japan |  126714000 |
+| Nagoya              | JPN         | JPN  | Japan |  126714000 |
+| Sapporo             | JPN         | JPN  | Japan |  126714000 |
++---------------------+-------------+------+-------+------------+
+12. UPDATE country SET headofstate="Elizabeth II" WHERE headofstate="Elisabeth II";
+ SELECT code,name,headofstate FROM country WHERE headofstate="Elizabeth II"; ans=
++------+----------------------------------------------+--------------+
+| code | name                                         | headofstate  |
++------+----------------------------------------------+--------------+
+| AIA  | Anguilla                                     | Elizabeth II |
+| ATG  | Antigua and Barbuda                          | Elizabeth II |
+| AUS  | Australia                                    | Elizabeth II |
+| BHS  | Bahamas                                      | Elizabeth II |
+| BLZ  | Belize                                       | Elizabeth II |
+| BMU  | Bermuda                                      | Elizabeth II |
+| BRB  | Barbados                                     | Elizabeth II |
+| CAN  | Canada                                       | Elizabeth II |
+| CCK  | Cocos (Keeling) Islands                      | Elizabeth II |
+| COK  | Cook Islands                                 | Elizabeth II |
+CXR  | Christmas Island                             | Elizabeth II |
+| CYM  | Cayman Islands                               | Elizabeth II |
+| FLK  | Falkland Islands                             | Elizabeth II |
+| GBR  | United Kingdom                               | Elizabeth II |
+| GIB  | Gibraltar                                    | Elizabeth II |
+| GRD  | Grenada                                      | Elizabeth II |
+| HMD  | Heard Island and McDonald Islands            | Elizabeth II |
+| IOT  | British Indian Ocean Territory               | Elizabeth II |
+| JAM  | Jamaica                                      | Elizabeth II |
+| KNA  | Saint Kitts and Nevis                        | Elizabeth II |
+| LCA  | Saint Lucia                                  | Elizabeth II |
+| MSR  | Montserrat                                   | Elizabeth II |
+| NFK  | Norfolk Island                               | Elizabeth II |
+| NIU  | Niue                                         | Elizabeth II |
+| NZL  | New Zealand                                  | Elizabeth II |
+| PCN  | Pitcairn                                     | Elizabeth II |
+| PNG  | Papua New Guinea                             | Elizabeth II |
+| SGS  | South Georgia and the South Sandwich Islands | Elizabeth II |
+| SHN  | Saint Helena                                 | Elizabeth II |
+| SLB  | Solomon Islands                              | Elizabeth II |
+| TCA  | Turks and Caicos Islands                     | Elizabeth II |
+| TKL  | Tokelau                                      | Elizabeth II |
+| TUV  | Tuvalu                                       | Elizabeth II |
+| VCT  | Saint Vincent and the Grenadines             | Elizabeth II |
+| VGB  | Virgin Islands, British                      | Elizabeth II |
+
+
